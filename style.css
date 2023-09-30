@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow&display=swap');
+:root{
+    /* Fonts */
+    --Font-family-1:'Barlow Condensed';
+    --Font-family-2:'Barlow';
+    --Font-weight-regular:400;
+    --Font-weight-bold:700;
+    --Font-size:18px;
+    /* Colors */
+    --Red:hsl(0, 100%, 68%);
+    --Very-Dark-Blue: hsl(230, 29%, 20%);
+    --Dark-Grayish-Blue: hsl(230, 11%, 40%);
+    --Grayish-Blue: hsl(231, 7%, 65%);
+    --Light-Grayish-Blue: hsl(207, 33%, 95%);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+   max-width: 100vw;
+  overflow-x: hidden;
+}
+header{
+    justify-content: end;
+    margin: 50PX 130PX;
+}
+header>div{
+margin-right: auto;
+}
+header, header nav ul{
+    display: flex;
+    gap: 50px;
+    list-style: none;
+    align-items: center;
+    font-family: var(--Font-family-1);
+    font-weight: var(--Font-weight-bold);
+    color: var(--Very-Dark-Blue);
+}
+li:hover{
+text-decoration: underline;
+text-decoration-color: var(--Grayish-Blue);
+cursor: pointer;
+}
+header button{
+    margin-left: 50px;
+    background-color: transparent;
+    border: none;
+    color: var(--Dark-Grayish-Blue);
+    font-family: var(--Font-family-1);
+    font-weight: var(--Font-weight-bold);
+}
+header button:hover{
+text-decoration: underline;
+text-decoration-color: var(--Very-Dark-Blue);
+cursor: pointer;
+}
+#menu-icon{
+    display: none;
+}
+main{
+    display: flex;
+    margin: 100px 130px;
+}
+#first div{
+display: flex;
+gap: 15px;
+margin-top: 50px;
+align-items: center;
+letter-spacing: 5px;
+color: var(--Grayish-Blue);
+font-family: var(--Font-family-2);
+font-weight: var(--Font-weight-regular);
+}
+#first div h3{
+font-family: var(--Font-family-1);
+color: white;
+padding:3px 10px ;
+letter-spacing: 0;
+border-radius: 20px;
+background-color: var(--Very-Dark-Blue);
+}
+h1{
+    font-family: var(--Font-family-1);
+    font-weight: var(--Font-weight-bold);
+    font-size: 4rem;
+    color: var(--Very-Dark-Blue);
+    margin-top: 5px;
+}
+p{
+    font-family: var(--Font-family-1);
+    font-weight: var(--Font-weight-regular);
+    color: var(--Dark-Grayish-Blue);
+    font-size: var(--Font-size);
+    margin-top: 20px;
+    width: 220px;
+}
+#first div button{
+    padding: 10px 20px;
+    font-family: var(--Font-family-1);
+    font-weight: var(--Font-weight-bold);
+    font-size: var(--Font-size);
+    color: white;
+    background-color: var(--Red);
+    border: none;
+    border-radius: 3px;
+}
+#first div button:hover{
+opacity: 0.7;
+cursor: pointer;
+}
+#second{
+position: relative;
+right: -50px;
+}
+
+/*MOBILE DESIGN*/
+
+@media (max-width:375px) {
+    header{
+        margin: 30PX 20PX;
+        justify-content: start;
+        display: grid;
+    }
+    .menu{
+        display: grid;
+        gap: 20px;
+        background-color: white;
+        box-shadow: 2PX 2PX 15PX var(--Grayish-Blue), -2PX 2PX 15PX var(--Grayish-Blue);
+        place-items: center;
+        margin-top: -20px;
+        padding: 20px 0px;
+        z-index: 1;
+        position: relative;
+        visibility: hidden;
+    }
+    .menu.show{
+    visibility: visible;
+    }
+    .menu.hide{
+        visibility: hidden;
+    }
+    header div{
+        display: flex;
+        align-items: center;
+    }
+    #menu-icon{
+        display: flex;
+        margin-left: 260px;
+    }
+    header button{
+        margin-left: 0px;
+        border-top: 1px solid var(--Grayish-Blue);
+        padding: 20px 120px 10PX;
+        font-size: var(--Font-size);
+       
+    }
+    main{
+        display: grid;
+        margin: -220px 0px;
+    }
+    #second{
+        right: 5px;
+        width: 87%;
+        grid-row-start: 0;
+        grid-row-end: 1;
+        z-index: 0;
+    }
+    #first{
+        margin: 30px 20px;
+    }
+    #first div{
+        font-size: 12px;
+    }
+    #first div h3{
+        padding:3px 10px ;
+        border-radius: 20px;
+         font-size: 1rem;
+         letter-spacing: 0;
+    }
+    h1{
+            font-size: 2.5rem;
+            line-height: 40px;
+            margin-top: 10px;
+    }
+        p{
+            font-size: 22px;
+            width: 280PX;
+        }
+        #first div button{
+            font-size: 12PX;
+            letter-spacing: 1px;
+            margin-top: -20px;
+        }
+}
